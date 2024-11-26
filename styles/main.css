@@ -1,0 +1,461 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #303841; /* Teks terang */
+  background-color: #EEEEEE; /* Warna biru lembut untuk latar belakang */
+  transition: background-color 0.3s, color 0.3s;
+}
+.mode-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+/* The circle inside the slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Icons */
+.icon {
+  position: relative;
+  font-size: 16px;
+  transition: opacity 0.3s;
+}
+
+/* Default icon visibility */
+.icon.light {
+  opacity: 1;
+}
+
+.icon.dark {
+  opacity: 0;
+}
+
+/* When the checkbox is checked */
+input:checked + .slider {
+  background-color: #457B9D;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+input:checked + .slider .icon.light {
+  opacity: 0;
+}
+
+input:checked + .slider .icon.dark {
+  opacity: 1;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #000000;
+  color: #EEEEEE;
+}
+
+.song {
+  visibility: hidden;
+}
+
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  width: 100vw;
+}
+
+.container > div {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 20vh;
+}
+
+.one {
+  font-size: 4.5rem;
+}
+
+.two {
+  font-size: 1.4rem;
+  font-weight: lighter;
+}
+
+.three {
+  font-size: 3rem;
+}
+
+.four .text-box {
+  border: 3px solid #aaa;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  width: 600px;
+}
+
+.text-box p {
+  margin: 0;
+  text-align: left;
+}
+
+.text-box span {
+  visibility: hidden;
+}
+
+.text-box .fake-btn {
+  background-color: rgb(21, 161, 237);
+  border-radius: 3px;
+  bottom: -50px;
+  color: #fff;
+  padding: .5rem 1rem;
+  position: absolute;
+  right: 5px;
+}
+
+.five p {
+  font-size: 2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.idea-3 strong {
+  border-radius: 3px;
+  display: inline-block;
+  padding: 3px 5px;
+}
+
+.five .idea-5 {
+  font-size: 3rem;
+}
+
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
+  display: inline-block;
+}
+
+.idea-6 span {
+  font-size: 15rem;
+}
+
+.six {
+  position: relative;
+  top: 10vh;
+  z-index: 1;
+}
+
+.six img {
+  display: inline-block;
+  height: 350px;
+  max-width: 100%;
+}
+
+.six .hat {
+  left: 41.5%;
+  position: absolute;
+  top: -35%;
+  width: 80px;
+}
+
+.baloons img {
+  display: inline-block;
+  position: absolute;
+}
+
+.baloons img:nth-child(even) {
+  left: -10%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 30%;
+}
+
+.seven,
+.eight {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.eight svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 25px;
+  z-index: -1;
+}
+
+.eight svg:nth-child(1) {
+  fill: #bd6ecf;
+  left: 5vw;
+  top: 7vh;
+}
+
+.eight svg:nth-child(2) {
+  fill: #7dd175;
+  left: 35vw;
+  top: 23vh;
+}
+
+.eight svg:nth-child(3) {
+  fill: #349d8b;
+  left: 23vw;
+  top: 33vh;
+}
+
+.eight svg:nth-child(4) {
+  fill: #347a9d;
+  left: 57vw;
+  top: 43vh;
+}
+
+.eight svg:nth-child(5) {
+  fill: #c66053;
+  left: 7vw;
+  top: 68vh;
+}
+
+.eight svg:nth-child(6) {
+  fill: #bfaa40;
+  left: 77vw;
+  top: 42vh;
+}
+
+.eight svg:nth-child(7) {
+  fill: #e3bae8;
+  left: 83vw;
+  top: 68vh;
+}
+
+.eight svg:nth-child(8) {
+  fill: #8762cb;
+  left: 37vw;
+  top: 86vh;
+}
+
+.eight svg:nth-child(9) {
+  fill: #9a90da;
+  left: 87vw;
+  top: 94vh;
+}
+
+.wish-hbd {
+  font-size: 3em;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wish p {
+  font-size: 1.3rem;
+  margin: 5px 50px;
+}
+
+.nine p {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.download-link {
+  display:  none;
+  opacity: 0;    /* Transparan */
+  margin-top: 10px;
+  text-decoration: none;
+  color: #6971bb; /* Warna hijau */
+  font-weight: bold;
+  transition: opacity 0.5s ease;
+}
+
+.download-link:hover {
+  color: #345ea7; /* Warna hijau lebih gelap saat hover */
+}
+
+
+#replay {
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .one {
+    font-size: 3.5rem;
+  }
+
+  .three {
+    font-size: 2.5rem;
+  }
+
+  .wish-hbd {
+    font-size: 2.5em;
+  }
+  
+  .idea-6 span {
+    font-size: 10rem;
+  }
+
+  .six img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .four .text-box {
+    width: 80%;
+  }
+
+  .wish-hbd {
+    font-size: 2em;
+  }
+
+  .idea-6 span {
+    font-size: 8rem;
+  }
+
+  .five .idea-5 {
+    font-size: 3rem;
+  }
+
+  .six img {
+    height: 200px;
+  }
+
+  .six .hat {
+    width: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .one {
+    font-size: 2.5rem;
+  }
+
+  .two {
+    font-size: 1rem;
+  }
+
+  .three {
+    font-size: 2rem;
+  }
+
+  .wish-hbd {
+    font-size: 1.8em;
+  }
+
+  .nine p {
+    font-size: 1.3rem;
+  }
+
+  .six .hat {
+    width: 50px;
+  }
+
+  .idea-6 span {
+    font-size: 5rem;
+  }
+
+  .four .text-box {
+    width: 90%;
+  }
+
+  .text-box .fake-btn {
+    bottom: -38px;
+    right: 5px;
+  }
+}
+/* Style Popup */
+/* Efek shadow untuk popup */
+.custom-swal-popup {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 5px; /* Memberikan border yang lebih halus */
+  padding: 20px;
+}
+
+/* Efek shadow untuk judul */
+.custom-swal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2C3E50; /* Warna judul */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan shadow di teks */
+}
+
+/* Efek shadow untuk tombol konfirmasi */
+.custom-swal-confirm {
+  background-color: #AD9DD1;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow untuk tombol konfirmasi */
+  border: none;
+  border-radius: 10px; /* Membuat tombol lebih bulat */
+}
+
+/* Efek shadow untuk tombol batal */
+.custom-swal-cancel {
+  background-color: #457B9D;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow untuk tombol batal */
+  border: none;
+  border-radius: 10px;
+}
